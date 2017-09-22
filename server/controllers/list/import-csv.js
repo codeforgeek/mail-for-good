@@ -31,7 +31,7 @@ module.exports = (req, res, io) => {
   */
 
   const listName = req.body.list; // Name of the list from the user
-  const additionalFields = _.without(JSON.parse(req.body.headers), 'email'); // e.g. name, location, sex, (excluding email header)
+  const additionalFields = _.without(JSON.parse(req.body.headers), ['email','Email','EMAIL']); // e.g. name, location, sex, (excluding email header)
   const userId = req.user.id;
 
   function validateEmail(email) {
